@@ -1,0 +1,12 @@
+.RData
+*.Rproj
+*.Rhistory
+*.DS*
+*.DS_Store
+data/*
+figures/*
+results/*
+registries/*
+pvmonitor/*
+.Rproj.user
+
