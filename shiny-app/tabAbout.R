@@ -7,7 +7,7 @@ tabAbout <- tabPanel("About",
     em("L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot"),
     br(),
     br(),
-    em("To be Submitted (2018)")),
+    em("To be submitted (2018)")),
   
   h3("Software"),
   

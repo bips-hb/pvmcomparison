@@ -8,7 +8,7 @@ tabMain <- tabPanel("Main",
                           em("L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot"),
                           br(),
                           br(),
-                          em("To be Submitted (2018)"),
+                          em("To be submitted (2018)"),
                           hr(),
                           p("In order to see all results for a particular parameter 
                             setting, go to the tab ", 
@@ -66,7 +66,7 @@ tabMain <- tabPanel("Main",
                           tags$li("\\(IC^{alternative}\\) - The Bayesian confidence propagation neural network (BCPNN) as proposed by Noren et. al. (2006)"),
                           tags$li("\\(IC^{alternative}_{025}\\) - the lower bound of the 97.5% credible interval of the \\(IC^{alternative}\\)"),
                           tags$li("\\(IC^{alternative}_{05}\\) - the lower bound of the 95% credible interval of the \\(IC^{alternative}\\)"),
-                          tags$li("\\(IC^{original}\\) - - The Bayesian confidence propagation neural network (BCPNN) as proposed by Bate et. al. (1998)"),
+                          tags$li("\\(IC^{original}\\) - The Bayesian confidence propagation neural network (BCPNN) as proposed by Bate et. al. (1998)"),
                           tags$li("\\(IC^{original}_{025}\\) - the lower bound of the 97.5% credible interval of the \\(IC^{original}\\)"),
                           tags$li("\\(IC^{original}_{05}\\)  - the lower bound of the 95% credible interval of the \\(IC^{original}\\)"),
                           tags$li("\\(\\Lambda_{binomial}\\) - likelihood ratio test assuming a binomial distribution for the 2 x 2 tables"),
@@ -92,7 +92,7 @@ tabMain <- tabPanel("Main",
                         
                         h3("Simulation Set-Up"),
                         
-                        p("Let \\(m\\) and \\((n\\) be the number of drugs and AEs that are in the SRS. 
+                        p("Let \\(m\\) and \\(n\\) be the number of drugs and AEs that are in the SRS. 
                           Each report sent to a SRS can then be represented by a binary vector:"),
                         
                         p("\\( (X_1, X_2, ..., X_m; Y_1, Y_2, ..., Y_n) \\)", align = "center"),
@@ -108,12 +108,12 @@ tabMain <- tabPanel("Main",
                         
                         shiny::img(src="figure2.png", align = "center", width = "100%"),
                         
-                        p("The top row represents the 500 drugs. The lower row the 500 AEs. An 
-                          arrow going from node A to node B reflects that the probability of 
+                        p("The top row represents the 500 drugs, the lower row the 500 AEs. An 
+                          arrow pointing from node A to node B reflects that the probability of 
                           B being 1 is influenced by the value of A. Note that the first 250 drugs,
                           \\(X_1\\) to \\(X_{250}\\), are connected to the first 250 AEs, 
                           \\(Y_1\\) to \\(Y_{250}\\). These form the associated drug-AE pairs that 
-                          each of the methods try to detect. In addition, the first 250 drugs are 
+                          each of the methods tries to detect. In addition, the first 250 drugs are 
                           connected to the last 250 drugs. They form the innocent bystanders, since 
                           they are prescribed in combination with the drug they are connected to, 
                           and, thus, might confound the method to 'think' that they are the ones
@@ -158,7 +158,7 @@ tabMain <- tabPanel("Main",
                           tags$li("Number of AEs: \\(n\\) = 500"), 
                           tags$li("Number of innocent bystanders: 0, 125 or 500"), 
                           tags$li("Conditional probability bystander, \\(\\gamma\\): .5, .75 or .9"), 
-                          tags$li("mean OR associated drug-AE pairs: 1.5, 3 or 5")
+                          tags$li("Mean OR associated drug-AE pairs: 1.5, 3 or 5")
                         ), 
                         
                         p("There are, thus, 21 parameter settings in total. For each setting, 
@@ -169,7 +169,7 @@ tabMain <- tabPanel("Main",
                         h3("Assessing the Performance"),
                         
                         p("Each of the 27 measures are applied to each of the 1,050 simulated SRSs
-                          (see the previous Section). Each time the precision-recall curve (PRC) is 
+                          (see the previous section). Each time the precision-recall curve (PRC) is 
                           created that shows the changes in precision and recall when the treshold 
                           is varied from most stringent to most relaxed. The area under this curve 
                           is used to assess the methods' overall capability to distinguish between
