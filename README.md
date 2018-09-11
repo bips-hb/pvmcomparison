@@ -27,7 +27,7 @@ In order to generate all the results as presented in the paper and at www.srs.bi
 and run the `run.R` script: 
 
 ```R
-exec("run.R")
+source("run.R")
 ```
 
 ### References
