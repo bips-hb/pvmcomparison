@@ -1,3 +1,5 @@
+rm(list = ls())
+
 library(shiny)
 library(shinyWidgets)
 library(shinyjs)
@@ -81,14 +83,38 @@ labels <- data.frame(
 
 
 # Define UI ----
-ui <- fluidPage(navbarPage("PV Comparison",
-                           tabMain,
-                           tabRanking,
-                           tabSetting,
-                           tabAbout))
+ui <- fluidPage(
+  tagList(tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
+  )),
+  
+  div(
+    class = "login",
+    uiOutput("uiLogin"),
+    textOutput("pass"),
+    tags$head(tags$style("#pass{color: red;"))
+  ),
+  
+  uiOutput("UIafterLogin")
+)
 
 # Define server logic ----
-server <- function(input, output) {
+server <- function(input, output, session) {
+  
+  USER <- reactiveValues(Logged = FALSE , session = session$user) 
+  
+  source("www/login.R",  local = TRUE)
+  
+  output$UIafterLogin <- renderUI({
+    if (USER$Logged) { 
+      navbarPage("PV Comparison",
+             tabMain,
+             tabRanking,
+             tabSetting,
+             tabAbout)
+    }
+  })
+  
   observe({
     toggleState(id = "gamma",
                 condition = input$n_innocent_bystanders != 0)

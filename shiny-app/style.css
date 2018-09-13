@@ -1,0 +1,17 @@
+div.login { 
+  text-align: left;
+  position:absolute;
+  top: 40%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px;
+}
+
+div.logininfo { 
+  text-align: right;  
+  position:relative;
+  top: 5%;
+  left: 90%;
+  background-color: yellow;
+  
+}
