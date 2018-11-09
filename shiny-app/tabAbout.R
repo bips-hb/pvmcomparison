@@ -1,13 +1,13 @@
 tabAbout <- tabPanel("About", 
   p("For more information, see:"),
   p(
-    strong("Adverse Event Discovery for Spontaneous Reporting Systems: 
-                          A Systematic Comparison"),
+    strong("Adverse Event or Innocent Bystander? A Systematic Comparison of 
+           Statistical Discovery Methods for Spontaneous Reporting Systems"),
     br(),
     em("L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot"),
     br(),
     br(),
-    em("To be submitted (2018)")),
+    em("Submitted (2018)")),
   
   h3("Software"),
   

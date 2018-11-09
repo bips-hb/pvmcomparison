@@ -2,13 +2,13 @@ tabMain <- tabPanel("Main",
                     withMathJax(),
                     sidebarLayout(
                       sidebarPanel(
-                        p(strong("Adverse Event Discovery for Spontaneous Reporting Systems: 
-                          A Systematic Comparison"),
+                        p(strong("Adverse Event or Innocent Bystander? A Systematic Comparison of 
+                                  Statistical Discovery Methods for Spontaneous Reporting Systems"),
                           br(),
                           em("L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot"),
                           br(),
                           br(),
-                          em("To be submitted (2018)"),
+                          em("Submitted (2018)"),
                           hr(),
                           p("In order to see all results for a particular parameter 
                             setting, go to the tab ", 
