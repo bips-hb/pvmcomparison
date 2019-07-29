@@ -4,9 +4,10 @@
 \alias{loadData}
 \title{Load Data}
 \usage{
-loadData(n_reports, n_drugs, n_events, alpha_drugs, beta_drugs, alpha_events,
-  beta_events, n_correlated_drugs, rho_drugs, n_correlated_events, rho_events,
-  n_correlated_pairs, rho, repetitions = c(1), type = "raw")
+loadData(n_reports, n_drugs, n_events, alpha_drugs, beta_drugs,
+  alpha_events, beta_events, n_correlated_drugs, rho_drugs,
+  n_correlated_events, rho_events, n_correlated_pairs, rho,
+  repetitions = c(1), type = "raw")
 }
 \arguments{
 \item{n_reports}{Number of reports}
