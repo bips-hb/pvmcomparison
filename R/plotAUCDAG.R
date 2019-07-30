@@ -11,14 +11,15 @@ plotAUCDAG <-
            ylim = NULL,
            title = "",
            measure = 'PRCAUC',
-           font_size = 12) {
+           font_size = 12, 
+           pattern = "aucdag+") {
   
   if (!(measure %in% c("AUC", "PRCAUC"))) { 
     measure <- "percentageNA" 
   }
       
   # get all the AUC results 
-  filenames <- list.files("results/", pattern = "aucdag+")
+  filenames <- list.files("results/", pattern = pattern)
   
   data <- tibble() 
   

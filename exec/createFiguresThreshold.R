@@ -1,8 +1,10 @@
 
 library(pvmcomparison)
 
+pattern <- "threshold4_"
+
 # get all the AUC results 
-filenames <- list.files("results/", pattern = "aucdag+")
+filenames <- list.files("results/", pattern = pattern)
 
 data <- tibble() 
 
@@ -34,7 +36,7 @@ for (theta in unique(sim_param$theta)) {
       bystander_probs <- c(0.5, 0.75, 0.9)
     }
     for (bystander_prob in bystander_probs) {
-    
+      
       if (n_innocent_bystanders == 0) {
         title <- TeX(sprintf("OR$\\approx %g$, no innocent bystanders", theta)) 
       } else { 
@@ -56,7 +58,8 @@ for (theta in unique(sim_param$theta)) {
           ylim = ylim,
           measure = "PRCAUC",
           title = title,
-          font_size = 13
+          font_size = 13,
+          pattern = pattern
         ),
         device = NULL,
         path = NULL,
@@ -94,7 +97,8 @@ for (theta in unique(sim_param$theta)) {
           bystander_prob = bystander_prob,
           n_innocent_bystanders = n_innocent_bystanders,
           ylim = NULL,
-          measure = "percna"
+          measure = "percna",
+          pattern = pattern
         ),
         device = NULL,
         path = NULL,
@@ -186,7 +190,8 @@ for (i in 1:27) {
       plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                             theta = theta,
                                             method_name = meth_label,
-                                            measure = "PRCAUC"
+                                            measure = "PRCAUC", 
+                                            pattern = pattern
       ),
       device = NULL,
       path = NULL,
@@ -229,7 +234,8 @@ ggsave(
                                         theta = theta,
                                         method_name = meth_label,
                                         measure = "PRCAUC",
-                                        ylim = ylim
+                                        ylim = ylim,
+                                        pattern = pattern
   ),
   device = NULL,
   path = NULL,
@@ -252,7 +258,8 @@ ggsave(
                                         theta = theta,
                                         method_name = meth_label,
                                         measure = "PRCAUC",
-                                        ylim = ylim
+                                        ylim = ylim,
+                                        pattern = pattern
   ),
   device = NULL,
   path = NULL,
@@ -275,7 +282,8 @@ ggsave(
                                         theta = theta,
                                         method_name = meth_label,
                                         measure = "PRCAUC",
-                                        ylim = ylim
+                                        ylim = ylim,
+                                        pattern = pattern
   ),
   device = NULL,
   path = NULL,
@@ -331,7 +339,8 @@ for (theta in unique(sim_param$theta)) {
           ylim = NULL,
           measure = "PRCAUC",
           title = title,
-          font_size = 13
+          font_size = 13,
+          pattern = pattern
         ),
         device = "eps",
         path = NULL,

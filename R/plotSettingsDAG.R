@@ -10,7 +10,8 @@ plotSettingsDAG <-
            ylim = NULL,
            method_name = method,
            measure = 'PRCAUC',
-           return_table = FALSE) {
+           return_table = FALSE,
+           pattern = "aucdag+") {
     if (!(measure %in% c("AUC", "PRCAUC"))) {
       measure <- "percentageNA"
     }
@@ -28,7 +29,7 @@ plotSettingsDAG <-
     }
     
     # get all the AUC results
-    filenames <- list.files("results/", pattern = "aucdag+")
+    filenames <- list.files("results/", pattern = pattern)
     
     data <- tibble()
     

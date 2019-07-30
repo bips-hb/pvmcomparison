@@ -5,7 +5,7 @@
 \title{Plot for the Different Parameter Settings}
 \usage{
 plotSettingsDAG(method, theta = 5, ylim = NULL, method_name = method,
-  measure = "PRCAUC", return_table = FALSE)
+  measure = "PRCAUC", return_table = FALSE, pattern = "aucdag+")
 }
 \value{
 A plot
