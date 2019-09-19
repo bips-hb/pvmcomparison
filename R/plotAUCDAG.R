@@ -45,6 +45,9 @@ plotAUCDAG <-
     n_innocent_bystanders == n_innocent_bystanders_,
     theta == theta_)
   
+  # filter out Q 
+  data <- data %>% filter(!(method %in% c("Q", "Q025", "Q05")))
+  
   if (is.null(ylim)) {
     ylim <- c(
       max(0.0, min(data[[measure]], na.rm = TRUE) - 0.01), 

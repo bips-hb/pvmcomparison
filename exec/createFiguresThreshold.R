@@ -15,6 +15,9 @@ for (filename in filenames) {
   data <- dplyr::bind_rows(data, data_auc)
 }
 
+# filter out Q 
+data <- data %>% filter(!(method %in% c("Q", "Q025", "Q05")))
+
 ylim <- c(
   max(0.0, min(data$PRCAUC, na.rm = TRUE) - 0.01), 
   min(1.0, max(data$PRCAUC, na.rm = TRUE) + 0.01)
@@ -46,7 +49,7 @@ for (theta in unique(sim_param$theta)) {
       
       ggsave(
         sprintf(
-          "figures/srsim_%.3f_%.3f_%d.pdf",
+          "figures/threshold-larger-than-4/srsim_%.3f_%.3f_%d.pdf",
           theta,
           bystander_prob,
           n_innocent_bystanders
@@ -87,7 +90,7 @@ for (theta in unique(sim_param$theta)) {
       
       ggsave(
         sprintf(
-          "figures/percna_%.3f_%.3f_%d.pdf",
+          "figures/threshold-larger-than-4/percna_%.3f_%.3f_%d.pdf",
           theta,
           bystander_prob,
           n_innocent_bystanders
@@ -186,7 +189,7 @@ for (i in 1:27) {
   
   for (theta in c(1.5, 3.0, 5.0)) {
     ggsave(
-      sprintf("figures/dag_%s_%.3f.pdf", meth, theta),
+      sprintf("figures/threshold-larger-than-4/dag_%s_%.3f.pdf", meth, theta),
       plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                             theta = theta,
                                             method_name = meth_label,
@@ -229,7 +232,7 @@ theta <- 5.0
 meth_label <- "$p_{Poisson}$"
 
 ggsave(
-  sprintf("figures/figure3_%s_%.3f.pdf", meth, theta),
+  sprintf("figures/threshold-larger-than-4/figure3_%s_%.3f.pdf", meth, theta),
   plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                         theta = theta,
                                         method_name = meth_label,
@@ -253,7 +256,7 @@ theta <- 5.0
 meth_label <- "$IC^{alternative}_{05}$"
 
 ggsave(
-  sprintf("figures/figure4_%s_%.3f.pdf", meth, theta),
+  sprintf("figures/threshold-larger-than-4/figure4_%s_%.3f.pdf", meth, theta),
   plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                         theta = theta,
                                         method_name = meth_label,
@@ -277,7 +280,7 @@ theta <- 5.0
 meth_label <- "LASSO"
 
 ggsave(
-  sprintf("figures/figure4_%s_%.3f.pdf", meth, theta),
+  sprintf("figures/threshold-larger-than-4/figure4_%s_%.3f.pdf", meth, theta),
   plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                         theta = theta,
                                         method_name = meth_label,
@@ -327,7 +330,7 @@ for (theta in unique(sim_param$theta)) {
       
       ggsave(
         sprintf(
-          "figures/poster_%.3f_%.3f_%d.eps",
+          "figures/threshold-larger-than-4/poster_%.3f_%.3f_%d.eps",
           theta,
           bystander_prob,
           n_innocent_bystanders
