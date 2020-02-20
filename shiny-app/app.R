@@ -21,7 +21,7 @@ source("plot.R")
 source("tabMain.R")
 source("tabRanking.R")
 source("tabSetting.R")
-source("tabAbout.R")
+#source("tabAbout.R")
 
 labels <- data.frame(
   method = c("a",
@@ -80,41 +80,29 @@ labels <- data.frame(
                    "RRR")
 )
 
-
-
 # Define UI ----
 ui <- fluidPage(
   tagList(tags$head(
     tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
   )),
-  
-  div(
-    class = "login",
-    uiOutput("uiLogin"),
-    textOutput("pass"),
-    tags$head(tags$style("#pass{color: red;"))
-  ),
-  
+
   uiOutput("UIafterLogin")
 )
 
 # Define server logic ----
 server <- function(input, output, session) {
   
-  USER <- reactiveValues(Logged = FALSE , session = session$user) 
-  
-  source("www/login.R",  local = TRUE)
-  
+  USER <- reactiveValues(Logged = TRUE , session = session$user) 
+
   output$UIafterLogin <- renderUI({
-    if (USER$Logged) { 
-      navbarPage("PV Comparison",
+    if (USER$Logged) {
+      navbarPage("PVM Comparison",
              tabMain,
              tabRanking,
-             tabSetting,
-             tabAbout)
+             tabSetting)
     }
   })
-  
+
   observe({
     toggleState(id = "gamma",
                 condition = input$n_innocent_bystanders != 0)

@@ -24,7 +24,7 @@ sim_param = as_tibble(
 ) %>% dplyr::filter(!(n_innocent_bystanders == 0 &
                         bystander_prob > 0.5))
 
-#source("exec/generate-simulation-data.R")
+source("exec/generate-simulation-data.R")
 
 source("exec/generate-results.R")
 
