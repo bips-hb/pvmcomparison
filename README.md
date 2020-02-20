@@ -64,9 +64,12 @@ and the average odds ratio between drugs and adverse drug reactions (ADRs) are d
 
 Please cite 
 
-__Adverse Event or Innocent Bystander? A Systematic Comparison of Statistical Discovery Methods for Spontaneous Reporting Systems__\
+
+
+__Adverse Drug Reaction or Innocent Bystander? A Systematic Comparison of Statistical Discovery Methods for Spontaneous Reporting Systems__\
 *L.J. Dijkstra, M. Garling, R. Foraita & I. Pigeot*\
-To be submitted (2018)
+Pharmacoepidemiology and Drug Safety (2020)\
+DOI:10.1002/PDS.4970
 
 ### Contact
 
