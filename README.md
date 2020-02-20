@@ -11,7 +11,7 @@ The code is published under the GPL-3 license.
 
 ### Shiny 
 
-All the results can be explored interactively at www.srs.bips.eu.
+All the results can be explored interactively at https://srs.bips.eu/
 
 ### Installation
  
