@@ -1,6 +1,10 @@
 # Load the results ---
 results <- readr::read_rds("data/results.rds") 
 
+# Filter out the results for Yule's Q. They were removed since the results are identical to 
+# the ROR
+results <- results %>% filter(!(method %in% c("Q05", "Q025", "Q")))
+
 # sort the method 
 results <- results %>% dplyr::arrange(method) 
 
@@ -25,9 +29,6 @@ results$method_label <- replace(results$method_label, results$method_label == "p
 results$method_label <- replace(results$method_label, results$method_label == "PRR", "PRR")
 results$method_label <- replace(results$method_label, results$method_label == "PRR025", "$PRR_{025}$")
 results$method_label <- replace(results$method_label, results$method_label == "PRR05", "$PRR_{05}$")
-results$method_label <- replace(results$method_label, results$method_label == "Q", "$Q$")
-results$method_label <- replace(results$method_label, results$method_label == "Q025", "$Q_{025}$")
-results$method_label <- replace(results$method_label, results$method_label == "Q05", "$Q_{05}$")
 results$method_label <- replace(results$method_label, results$method_label == "RFET", "RFET")
 results$method_label <- replace(results$method_label, results$method_label == "ROR", "ROR")
 results$method_label <- replace(results$method_label, results$method_label == "ROR025", "$ROR_{025}$")

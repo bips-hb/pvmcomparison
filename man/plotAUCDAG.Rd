@@ -5,7 +5,8 @@
 \title{Boxplot of the AUCs}
 \usage{
 plotAUCDAG(theta = 1.5, bystander_prob = 0.9, n_innocent_bystanders = 250,
-  ylim = NULL, title = "", measure = "PRCAUC", font_size = 12)
+  ylim = NULL, title = "", measure = "PRCAUC", font_size = 12,
+  pattern = "aucdag+")
 }
 \value{
 A ROC plot

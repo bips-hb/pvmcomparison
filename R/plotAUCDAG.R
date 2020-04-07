@@ -11,14 +11,15 @@ plotAUCDAG <-
            ylim = NULL,
            title = "",
            measure = 'PRCAUC',
-           font_size = 12) {
+           font_size = 12, 
+           pattern = "aucdag+") {
   
   if (!(measure %in% c("AUC", "PRCAUC"))) { 
     measure <- "percentageNA" 
   }
       
   # get all the AUC results 
-  filenames <- list.files("results/", pattern = "aucdag+")
+  filenames <- list.files("results/", pattern = pattern)
   
   data <- tibble() 
   
@@ -43,6 +44,9 @@ plotAUCDAG <-
     bystander_prob == bystander_prob_, 
     n_innocent_bystanders == n_innocent_bystanders_,
     theta == theta_)
+  
+  # filter out Q 
+  data <- data %>% filter(!(method %in% c("Q", "Q025", "Q05")))
   
   if (is.null(ylim)) {
     ylim <- c(

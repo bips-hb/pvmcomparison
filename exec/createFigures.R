@@ -224,7 +224,7 @@ theta <- 5.0
 meth_label <- "$p_{Poisson}$"
 
 ggsave(
-  sprintf("figures/figure4_%s_%.3f.pdf", meth, theta),
+  sprintf("figures/figure3_%s_%.3f.pdf", meth, theta),
   plot = pvmcomparison::plotSettingsDAG(method = meth, 
                                         theta = theta,
                                         method_name = meth_label,
