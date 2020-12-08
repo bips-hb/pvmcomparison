@@ -13,6 +13,11 @@ The code is published under the GPL-3 license.
 
 All the results can be explored interactively at https://srs.bips.eu/
 
+
+### Acknowledgements
+
+We gratefully acknowledge the financial support from the innovation fund (“Innovationsfonds”) of the Federal Joint Committee in Germany (grant number: 01VSF16020).
+
 ### Installation
  
 To install, simply type in `R`
